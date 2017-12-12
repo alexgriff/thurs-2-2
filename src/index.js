@@ -9,6 +9,7 @@ import './index.css';
 const defaultState = { profile: {}, loading: false };
 
 const reducer = (state = defaultState, action) => {
+  console.log('action', action);
   switch (action.type) {
     case 'ASYNC_START':
       return { ...state, profile: {}, loading: true };
@@ -26,7 +27,7 @@ const reducer = (state = defaultState, action) => {
   }
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -57,4 +57,10 @@ const mapStateToProps = ({ loading, profile }) => {
   };
 };
 
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchProfile: () => {dispatch(actions.fetchProfile())}
+//   }
+// }
+
 export default connect(mapStateToProps, actions)(Profile);
